@@ -8,5 +8,7 @@ namespace WebApp01.Models
         {
 
         }
+
+        public System.Data.Entity.DbSet<WebApp01.Models.Entities.Departament> Departaments { get; set; }
     }
 }
