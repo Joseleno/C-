@@ -19,7 +19,6 @@ namespace Linq02
                 Console.WriteLine(n);
             }
 
-
             Console.ReadKey();
         }
     }
