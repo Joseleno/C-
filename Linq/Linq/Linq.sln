@@ -11,9 +11,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Linq03", "Linq03\Linq03.csp
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Linq04", "Linq04", "{BC0B15BC-BAA8-4A81-8CE7-6383F462EBFB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Magasin", "Magasin\Magasin.csproj", "{A5C038B6-CB40-4627-B716-C3CE7C6A7E16}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Magasin", "Linq04\Magasin\Magasin.csproj", "{A5C038B6-CB40-4627-B716-C3CE7C6A7E16}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Magasin.Domaine", "Magasin.Domaine\Magasin.Domaine.csproj", "{88451D18-E76A-4FCD-860C-3D560AB0B6A0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Magasin.Domaine", "Linq04\Magasin.Domaine\Magasin.Domaine.csproj", "{88451D18-E76A-4FCD-860C-3D560AB0B6A0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
