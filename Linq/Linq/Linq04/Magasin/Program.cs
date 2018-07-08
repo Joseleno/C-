@@ -12,32 +12,27 @@ namespace Magasin
         {
 
             var prod = new Produit().Lister();
-            var prod2 = new Produit().Lister(); 
+            var prod2 = new Produit().Lister();
+            var prod3 = new Produit().Lister();
 
             // where return un Inumerable
             prod.Where(x => x.Valeur < 10 && x.Quantite > 5).ToList().ForEach(p =>
               {
-
-
-                   Console.WriteLine("Produit: " + p.Description + " Valeur: " + p.Valeur +
-                       " Expiration: " + p.Expiration);
-
+                  Console.WriteLine("Produit: " + p.Description + " Valeur: " + p.Valeur +
+                      " Expiration: " + p.Expiration);
               });
 
 
             // JSON FORMAT
-            prod = prod.Where(x => x.Valeur < 10 && x.Quantite > 5 && x.Description.ToUpper().Contains("A") ).ToList();
+            prod = prod.Where(x => x.Valeur < 10 && x.Quantite > 5 && x.Description.ToUpper().Contains("A")).ToList();
 
-           
-           prod.ForEach(p =>
-            {
+            prod.ForEach(p =>
+             {
+                 Console.WriteLine("");
+                 Console.WriteLine("--------JSON FORMAT-------------");
+                 Console.WriteLine(JsonConvert.SerializeObject(p));
 
-                Console.WriteLine("");
-                Console.WriteLine("--------JSON FORMAT-------------");
-                Console.WriteLine(JsonConvert.SerializeObject(p));
-
-            });
-
+             });
             Console.WriteLine("");
             Console.WriteLine("--------Exemple 3-------------");
             // Un autre exemple
@@ -76,14 +71,33 @@ namespace Magasin
                 .Select(a => new ProduitSelected { Description = a.Description, Valeur = a.Valeur, Expiration = a.Expiration })
                 .ToList();
 
-            resultSelected.ForEach(X =>
+            if (resultSelected.Any())
             {
-                Console.WriteLine(JsonConvert.SerializeObject( X));
-            });
+                resultSelected.ForEach(X =>
+                {
+                    Console.WriteLine(JsonConvert.SerializeObject(X));
+                });
+            }
 
 
+            Console.WriteLine("");
+            Console.WriteLine("--------Exemple 6 - les fonctions d'agrégation-------------");
+            // les fonctions d'agrégation
+            if (prod3.Any())
+            {
+                var exempleGroup = from p in prod3
+                                   group p by p.Type into groupT
+                                   select new
+                                   {
+                                       Description = groupT.Key,
+                                       PrixMoinCher = groupT.Min(x => x.Valeur),
+                                       PrixPlusCher = groupT.Max(x => x.Valeur)
+                                   };
+
+                Console.WriteLine(JsonConvert.SerializeObject(exempleGroup));
 
 
+            }
 
 
             Console.ReadKey();
