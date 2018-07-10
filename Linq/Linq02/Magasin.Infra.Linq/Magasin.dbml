@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Magasin" Class="MagasinDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=SDM-DEV\SQLEXPRESS;Initial Catalog=Magasin;Integrated Security=True" SettingsObjectName="Magasin.Infra.Linq.Properties.Settings" SettingsPropertyName="MagasinConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Categorie" Member="Categorie">
+    <Type Name="Categorie">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Association Name="Categorie_Produit" Member="Produit" ThisKey="Id" OtherKey="IdCategorie" Type="Produit" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Produit" Member="Produit">
+    <Type Name="Produit">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdCategorie" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Valeur" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Association Name="Categorie_Produit" Member="Categorie" ThisKey="IdCategorie" OtherKey="Id" Type="Categorie" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

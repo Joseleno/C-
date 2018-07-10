@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2035
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqApp", "LinqApp\LinqApp.csproj", "{21FE6331-F4F3-446A-B291-CBF78C8315F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Magasin.Infra.Linq", "Magasin.Infra.Linq\Magasin.Infra.Linq.csproj", "{05AAB0C9-18C7-4A43-BEAF-7080A4BF5343}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{21FE6331-F4F3-446A-B291-CBF78C8315F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21FE6331-F4F3-446A-B291-CBF78C8315F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21FE6331-F4F3-446A-B291-CBF78C8315F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21FE6331-F4F3-446A-B291-CBF78C8315F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05AAB0C9-18C7-4A43-BEAF-7080A4BF5343}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05AAB0C9-18C7-4A43-BEAF-7080A4BF5343}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05AAB0C9-18C7-4A43-BEAF-7080A4BF5343}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05AAB0C9-18C7-4A43-BEAF-7080A4BF5343}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CBFA6E94-1EEB-4AEA-8BDF-6AFC8E7C2010}
+	EndGlobalSection
+EndGlobal
