@@ -50,7 +50,11 @@ namespace Magasin.Infra.Linq.Repositorie
         {
             MagasinDataContext linq = new MagasinDataContext();
 
-            return linq.Produit.ToList();
+
+            //return linq.Produit.ToList();
+
+            //parallel processing
+            return linq.Produit.AsParallel().ToList();
 
         }
             

@@ -1,7 +1,7 @@
 ﻿using Magasin.Infra.Linq.Repositorie;
 using Newtonsoft.Json;
 using System;
-
+using System.Diagnostics;
 
 namespace LinqApp
 {
@@ -13,10 +13,8 @@ namespace LinqApp
             //new RepoCategorie().AddCategorie(2, "Boissons");
             //new RepoCategorie().AddCategorie(3, "Fruits");
             //new RepoCategorie().AddCategorie(4, "vêtements"); 
-
             //new RepoCategorie().ModifierCategorie(4, "Vêtements");
             //new RepoCategorie().SupprimerCategorie(4);
-
             //new RepoProduit().AddProduit(1, 1, "Ordinateur ACER", 850);
             //new RepoProduit().AddProduit(2, 1, "Ordinateur SONNY", 1050);
             //new RepoProduit().AddProduit(3, 1, "Ordinateur DELL", 950);
@@ -31,10 +29,12 @@ namespace LinqApp
 
             var produits = new RepoProduit().ListProduits();
 
-            produits.ForEach(x => Console.WriteLine("Produit: " + x.Description + "  Categorie: " + x.IdCategorie + "  Prix: "+ x.Valeur));
+            produits.ForEach(x => Console.WriteLine("Produit: " + x.Description + "  Categorie: " + x.IdCategorie + "  Prix: " + x.Valeur));
 
             Console.ReadKey();
 
+
         }
+
     }
 }
