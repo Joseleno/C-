@@ -2,11 +2,14 @@
 using Newtonsoft.Json;
 using System;
 using System.Diagnostics;
+using System.Linq;
 
 namespace LinqApp
 {
     class Program
     {
+               
+
         static void Main(string[] args)
         {
             //new RepoCategorie().AddCategorie(1, "Électroniques");
@@ -29,7 +32,37 @@ namespace LinqApp
 
             var produits = new RepoProduit().ListProduits();
 
+
+
             produits.ForEach(x => Console.WriteLine("Produit: " + x.Description + "  Categorie: " + x.IdCategorie + "  Prix: " + x.Valeur));
+
+
+            Console.WriteLine("");
+            Console.WriteLine("------pagination:  ------- ");
+
+            var produitsPagination = produits.Take(2).ToList();
+
+            produitsPagination.ForEach(x => Console.WriteLine("Produit: " + x.Description + "  Categorie: " + x.IdCategorie + "  Prix: " + x.Valeur));
+
+
+
+            Console.WriteLine("");
+            Console.WriteLine("------Count:  ------- ");
+
+            Console.WriteLine("Total de produits: " + produits.Count());
+            Console.WriteLine("Total de produits avec : " + produits.Count(x => x.IdCategorie == 1));
+
+            Console.WriteLine("");
+            Console.WriteLine("------SkipWhile:  ------- ");
+
+            var produitsPlusChers = produits.SkipWhile(x => x.Valeur > 1200).ToList();
+
+            produitsPlusChers.ForEach(x => {
+
+                Console.WriteLine(string.Concat(x.Description, " CAD$ "+ x.Valeur));
+            });
+
+
 
             Console.ReadKey();
 
